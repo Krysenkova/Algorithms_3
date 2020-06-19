@@ -4,9 +4,6 @@ import ALGO_3.data.Student;
 import ALGO_3.main.Console;
 import ALGO_3.stack.Stackable;
 
-import java.sql.SQLOutput;
-import java.util.Iterator;
-
 public class Menu {
     public static void mainMenu() {
         System.out.println();
@@ -42,8 +39,7 @@ public class Menu {
                         stack.clear();
                         System.out.println("The student was popped. The stack is empty now.");
                     } else {
-                        stack.pop();
-                        System.out.println("The student was popped.");
+                        System.out.println(stack.pop() + " was popped.");
                     }
                     break;
                 case 3:

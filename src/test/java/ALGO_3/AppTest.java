@@ -4,16 +4,13 @@
 package ALGO_3;
 
 import ALGO_3.data.Student;
-import ALGO_3.main.App;
 import ALGO_3.stack.Stack;
-import ALGO_3.stack.Stackable;
 import org.junit.Assert;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class AppTest {
 
-    private Stack<Student> provideStack(){
+    private Stack<Student> provideStack() {
         Stack<Student> test_stack = new Stack<>();
         var s1 = new Student("Watson", "John", 3568, 1);
         var s2 = new Student("Holmes", "Sherlock", 7629, 4);
@@ -26,7 +23,7 @@ public class AppTest {
 
 
     @Test
-    public void pushAndPeekTest(){
+    public void pushAndPeekTest() {
         Stack<Student> new_stack = provideStack();
         var s4 = new Student("Hooper", "Molly", 3743, 2);
         new_stack.push(s4);
@@ -35,7 +32,7 @@ public class AppTest {
     }
 
     @Test
-    public void popTest(){
+    public void popTest() {
         Stack<Student> new_stack = new Stack<>();
         var s1 = new Student("Watson", "John", 3568, 1);
         var s2 = new Student("Holmes", "Sherlock", 7629, 4);
@@ -47,7 +44,7 @@ public class AppTest {
     }
 
     @Test
-    public void clearAndIsEmptyTest(){
+    public void clearAndIsEmptyTest() {
         Stack<Student> new_stack = provideStack();
         Assert.assertFalse(new_stack.isEmpty());
         new_stack.clear();
@@ -56,7 +53,7 @@ public class AppTest {
     }
 
     @Test
-    public void sizeTest(){
+    public void sizeTest() {
         Stack<Student> new_stack = provideStack();
         Assert.assertEquals(3, new_stack.size());
         new_stack.pop();

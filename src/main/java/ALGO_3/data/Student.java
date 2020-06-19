@@ -14,37 +14,6 @@ public class Student {
         this.course = course;
     }
 
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getPrename() {
-        return prename;
-    }
-
-    public void setPrename(String prename) {
-        this.prename = prename;
-    }
-
-    public int getMatriculationNumber() {
-        return matriculationNumber;
-    }
-
-    public void setMatriculationNumber(int matriculationNumber) {
-        this.matriculationNumber = matriculationNumber;
-    }
-
-    public int getCourse() {
-        return course;
-    }
-
-    public void setCourse(int course) {
-        this.course = course;
-    }
 
     @Override
     public String toString() {

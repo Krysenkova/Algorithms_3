@@ -1,17 +1,20 @@
 package ALGO_3.stack;
 
-public interface Stackable<T> {
+import java.util.Iterator;
+
+public interface Stackable<T> extends Iterable<T>{
     void push(T data);
 
     T pop();
 
     T peek();
 
-    boolean empty();
+    boolean isEmpty();
 
     int size();
 
     void printAll();
 
     void clear();
+
 }

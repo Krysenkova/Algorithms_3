@@ -28,6 +28,9 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 }
+run {
+    standardInput = System.in
+}
 
 application {
     // Define the main class for the application.

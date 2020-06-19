@@ -1,5 +1,8 @@
 package ALGO_3.stack;
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 public class Stack<T> implements Stackable<T> {
 
     private Node head;
@@ -8,6 +11,28 @@ public class Stack<T> implements Stackable<T> {
     private class Node {
         T data;
         Node next;
+    }
+
+    public Iterator<T> iterator(){
+        return new StackIterator();
+    }
+
+    public class StackIterator implements Iterator<T>{
+        Node next;
+        StackIterator(){
+            next = head;
+        }
+        @Override
+        public boolean hasNext() {
+            return next!=null;
+        }
+        @Override
+        public T next() throws NoSuchElementException{
+            if(!hasNext()) throw new NoSuchElementException();
+            T result = next.data;
+            next = next.next;
+            return result;
+        }
     }
 
     @Override
@@ -39,7 +64,7 @@ public class Stack<T> implements Stackable<T> {
     }
 
     @Override
-    public boolean empty() {
+    public boolean isEmpty() {
         return head == null;
     }
 

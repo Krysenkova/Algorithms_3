@@ -3,13 +3,69 @@
  */
 package ALGO_3;
 
+import ALGO_3.data.Student;
 import ALGO_3.main.App;
+import ALGO_3.stack.Stack;
+import ALGO_3.stack.Stackable;
+import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AppTest {
-    @Test public void testAppHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull("app should have a greeting", classUnderTest.getGreeting());
+
+    private Stack<Student> provideStack(){
+        Stack<Student> test_stack = new Stack<>();
+        var s1 = new Student("Watson", "John", 3568, 1);
+        var s2 = new Student("Holmes", "Sherlock", 7629, 4);
+        var s3 = new Student("Moriarty", "Jim", 4321, 3);
+        test_stack.push(s1);
+        test_stack.push(s2);
+        test_stack.push(s3);
+        return test_stack;
+    }
+
+
+    @Test
+    public void pushAndPeekTest(){
+        Stack<Student> new_stack = provideStack();
+        var s4 = new Student("Hooper", "Molly", 3743, 2);
+        new_stack.push(s4);
+        Assert.assertEquals(s4, new_stack.peek());
+
+    }
+
+    @Test
+    public void popTest(){
+        Stack<Student> new_stack = new Stack<>();
+        var s1 = new Student("Watson", "John", 3568, 1);
+        var s2 = new Student("Holmes", "Sherlock", 7629, 4);
+        new_stack.push(s1);
+        new_stack.push(s2);
+        new_stack.pop();
+        Assert.assertEquals(s1, new_stack.peek());
+        Assert.assertEquals(1, new_stack.size());
+    }
+
+    @Test
+    public void clearAndIsEmptyTest(){
+        Stack<Student> new_stack = provideStack();
+        Assert.assertFalse(new_stack.isEmpty());
+        new_stack.clear();
+        Assert.assertTrue(new_stack.isEmpty());
+        Assert.assertEquals(0, new_stack.size());
+    }
+
+    @Test
+    public void sizeTest(){
+        Stack<Student> new_stack = provideStack();
+        Assert.assertEquals(3, new_stack.size());
+        new_stack.pop();
+        Assert.assertEquals(2, new_stack.size());
+        new_stack.clear();
+        Assert.assertEquals(0, new_stack.size());
+        var s = new Student("Watson", "Mary", 6758, 3);
+        new_stack.push(s);
+        Assert.assertEquals(1, new_stack.size());
+
     }
 }

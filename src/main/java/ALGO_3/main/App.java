@@ -18,7 +18,7 @@ public class App {
         System.out.println("-------------------------");
         System.out.println("Peek: " + stack.peek());
         System.out.println("Size: " + stack.size());
-        System.out.println("Empty: " + stack.empty());
+        System.out.println("Empty: " + stack.isEmpty());
     }
 }
 
